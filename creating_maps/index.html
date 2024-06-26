@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Creating Maps - GeoSyilx Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">GeoSyilx Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Installing</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../localhost/" class="dropdown-item">Under localhost</a>
+</li>
+                                    
+<li>
+    <a href="../production/" class="dropdown-item">Production Enhancements</a>
+</li>
+                                    
+<li>
+    <a href="../developing/" class="dropdown-item">Developing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Managing</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../managing_permissions/" class="dropdown-item">Managing Permissions</a>
+</li>
+                                    
+<li>
+    <a href="../managing_groups/" class="dropdown-item">Managing Groups</a>
+</li>
+                                    
+<li>
+    <a href="../managing_users/" class="dropdown-item">Managing Users</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Data Stewardship</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../manage_data/" class="dropdown-item">Managing Data</a>
+</li>
+                                    
+<li>
+    <a href="../uploading_data/" class="dropdown-item">Uploading Data</a>
+</li>
+                                    
+<li>
+    <a href="../completing_metadata/" class="dropdown-item">Completing Metadata</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Creating Maps</a>
+</li>
+                                    
+<li>
+    <a href="../creating_dashboards/" class="dropdown-item">Creating Dashboards</a>
+</li>
+                                    
+<li>
+    <a href="../creating_geostories/" class="dropdown-item">Creating GeoStories</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../completing_metadata/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../creating_dashboards/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="true">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#creating-maps" class="nav-link">Creating Maps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="creating-maps">Creating Maps</h1>
+<p>In this section, we’ll create a Map using some uploaded datasets, combine them with some other datasets from remote web services, and then share the resulting map for public viewing.</p>
+<p>In order to create new maps you can use:</p>
+<pre><code>The Create map listed after clicking the Add Resource button on the All Resources list page.
+
+The New button after clicking the Maps button on the menu bar.
+
+The Create map link in the Dataset Page (it creates a map using a specific dataset)
+</code></pre>
+<p>The new Map will open in a Map Viewer like the one in the picture below.</p>
+<p>Using the Add dataset link, you can add a layer by clicking on one of the layers listed in the catalog. In the upper left corner the TOC button button opens the Table of Contents (TOC) of the Map. It allows to manage all the datasets associated with the map and to add new ones from the Add dataset. The TOC component makes possible to manage datasets overlap on the map by shifting their relative positions in the list (drag and drop them up or down in the list). It also allows to hide/show datasets ( show_button and hide_button ), to zoom to datasets extents ( zoom_to_dataset_extent_button ) and to manage their properties ( dataset_settings_button ). Once the map datasets have been settled it is possible to save the Map by clicking on the Save as under the Resources link in the map toolbar.</p>
+<p>Map tools and configuration</p>
+<p>In this section, we are going to explore all tools provided on the Map View page. From the list of available maps, you can select the map you are interested in and click View map, the map will look like this.</p>
+<p>The Map View (based on MapStore) provides the following tools:</p>
+<pre><code>the Table of Contents (TOC) to manage the map contents;
+
+the Basemap Switcher to change the basemap ();
+
+the Search Bar to search by location, name and coordinates ();
+
+the Other Menu Tools which contains the link to the datasets Catalog;
+
+the Sidebar which contains, by default, the link to the Print tool and to the Measure tool;
+
+the Navigation Bar and its tools such as the Zoom tools, the 3D Navigation tool and the Get Features Info tool;
+
+the Footer Tools to manage the scale of the map, to track the mouse coordinates and change the CRS (Coordinates Reference System).
+</code></pre>
+<p>A map can be configured to use a custom Map Viewer, with which the lsit of tools available in the map can be customized.</p>
+<p>Search Bar</p>
+<p>The Search Bar of the map viewer allows you to find point of interests (POIs), streets or locations by name.
+Lets type the name of some place then select the first record. </p>
+<p>Navigation bar
+The Map Viewer makes also available the Navigation bar. It is a navigation panel containing various tools that help you to explore the map such as tools for zooming, changing the extent and querying objects on the map.
+By default the Navigation bar shows you the zooming buttons zoom_in_button, zoom_out_button and 3d_button, other options can be explored by clicking on sidebar_expand_button which expands/collapses the toolbar.|</p>
+<p>The Navigation bar contains the following tools:</p>
+<pre><code>The Query Objects on map allows you to get feature information through the query_objects_on_map_button button. It allows you to retrieve information about the features of some datasets by clicking them directly on the map.
+
+When clicking on map a new panel opens. That panel will show you all the information about the clicked features for each active loaded dataset.
+</code></pre>
+<p>Maps Metadata</p>
+<p>Maps Metadata can be Edited by clicking the Edit Metadata link from the Map Detail page.</p>
+<p>The Map Metadata Edit form will open. Metadata provide essential information for the identification and the comprehension of the map. They also make the map more easily retrievable through the search tools. Those Metadata can be filled out through three-steps in which you have to provide all mandatory information to complete the process. Those three steps are described below.</p>
+<p>In the first step the system asks you to insert the following metadata (required fields are highlighted with red outlines):</p>
+<ul>
+<li>
+<p>Basic Metadata</p>
+<p>Thumbnail of the map (click Edit to change it);</p>
+<p>Title of the map, which should be clear and understandable;</p>
+<p>Abstract; brief narrative summary of the content of the Map</p>
+<p>Creation/Publication/Revision Dates which define the time period that is covered by the map;</p>
+<p>Keywords, which should be chosen within the available list;</p>
+<p>Category which the map belongs to;</p>
+<p>Group which the map is linked to.</p>
+</li>
+<li>
+<p>Location and Licenses</p>
+</li>
+</ul>
+<p>The following list shows what kinds of metadata you are required to enter (see also the picture below):</p>
+<pre><code>Language of the layer;
+
+License of the dataset;
+
+Regions covered by the layers extent. Proposed extents cover the following scales: global, continental, regional, national;
+
+Data Quality statement (general explanation of the data producer’s knowledge about the lineage of a dataset);
+
+Potential Restrictions on layer sharing.
+</code></pre>
+<p>No further mandatory metadata are required in the next step so, once the required fields have been filled out, a green Done button will be visible in the screen. Click Next &gt;&gt; to go to the next step or &lt;&lt; Back to go back to the previous step.</p>
+<ul>
+<li>Optional Metadata
+    Complementary information are:<pre><code>Edition of the map;
+
+Purpose of the map and its objectives;
+
+Supplemental information that can provide a better understanding of the map;
+
+Maintenance frequency of the map;
+
+Spatial representation type, the method used to represent geographic information in the dataset;
+
+Users who are Responsible for the layer, its Owner, and the Author of its metadata;
+
+Related resources to link one or multiple resources to the document. These will be visible inside the Map Information panel
+</code></pre>
+</li>
+</ul>
+<p>If you miss some mandatory metadata the Completeness bar shows you a red message.</p>
+<p>Share Options</p>
+<p>In GeoNode the share options management system is indeed more complex. Administrators can choose who can do what for each map. Users can manage only the maps they own or the maps which they are authorize to manage.</p>
+<p>By default only owners can edit and manage maps, and anyone can view them.</p>
+<p>In order to modify the Map Share Options settings you can click the Share link in the Map Detail Page.</p>
+<p>Through the Share Options Settings Panel you can add or remove options for users and groups. The picture below shows an example.</p>
+<p>You can set the following options:</p>
+<pre><code>View (allows to view the map).
+
+Download (allows to view and download the map).
+
+Edit (allows to change the map’s metadata);
+
+Manage allows to update, delete, change share options, publish and unpublish the map.
+</code></pre>
+<p>Click on Save link in the menu to save these settings.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
